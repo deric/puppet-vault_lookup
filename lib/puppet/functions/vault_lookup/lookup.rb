@@ -17,7 +17,7 @@ Puppet::Functions.create_function(:'vault_lookup::lookup', Puppet::Functions::In
     optional_param 'String', :secret_id
     optional_param 'Optional[String]', :approle_path_segment
     optional_param 'String', :agent_sink_file
-    return_type 'Sensitive'
+    return_type 'Variant[Sensitive[String],Sensitive[Hash[String, String]]]'
   end
 
   # Allows for passing a hash of options to the vault_lookup::lookup() function.
